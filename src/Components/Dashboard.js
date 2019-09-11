@@ -1,17 +1,17 @@
 import React from 'react';
 import Navigation from './Navigation';
-import firebase from 'firebase';
-import {firebaseConfig} from './credencialsFirebase';
+//import firebase from 'firebase';
+//import {firebaseConfig} from './credencialsFirebase';
 
 
 
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 
-firebase.onAuthstateChange((user)=>{
-    firebase.firestore().collection('users');
-});
+//firebase.onAuthstateChange((user)=>{
+    //firebase.firestore().collection('users');
+//});
 
 
 
