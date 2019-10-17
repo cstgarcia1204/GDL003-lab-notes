@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Route} from 'react-router-dom'; 
-import LogIn from './Components/LogIn';
-import Dashboard from './Components/Dashboard';
-import NewNote from './Components/NewNote';
+import LogIn from './components/LogIn';
+import Dashboard from './components/Dashboard';
+import NewNote from './components/NewNote';
+
 
 //conditional rendering checar
 //proteccion de rutas
 //netNinja videos
+
 
 class App extends React.Component {
   
@@ -16,7 +18,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Magnetic Notes App</h2> 
+          <h2>Magnetic Notes App 2.0</h2>
         </div>
         <BrowserRouter>
           <React.Fragment>
@@ -25,7 +27,6 @@ class App extends React.Component {
             <Route path="/newNote" component={NewNote}/>
           </React.Fragment>
         </BrowserRouter>
-      
       </div>
       
     );

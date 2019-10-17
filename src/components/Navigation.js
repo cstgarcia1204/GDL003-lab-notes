@@ -5,17 +5,17 @@ import {Link} from 'react-router-dom';
 const Navi= ()=>{
     return(
         <React.Fragment>
-            <dl>
-                <dt>
-                    <Link to="/LogIn">Start</Link>
-                </dt>
-                <dt>
+            <ul>
+                <li type='circle'>
+                    <Link to="/LogIn">Home</Link>
+                </li>
+                <li type='circle'>
                     <Link to="/Dashboard">Dashboard</Link>
-                </dt>
-                <dt>
+                </li>
+                <li type='circle'>
                     <Link to="/NewNote">New Note Area</Link>
-                </dt>
-            </dl>
+                </li>
+            </ul>
         </React.Fragment>
     );
 

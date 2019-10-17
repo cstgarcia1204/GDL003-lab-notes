@@ -1,17 +1,17 @@
 import React from 'react';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import './credencialsFirebase';
+import Dashboard from './Dashboard';
 import Navigation from './Navigation';
-import {firebaseConfig} from './credencialsFirebase';
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
 
 class LogIn extends React.Component{
     constructor(){
         super()//rquerido por la subclase component
         this.state={
-              isUserSignedIn: false
+              isUserSignedIn: false,
         }
     }
   
@@ -28,9 +28,9 @@ class LogIn extends React.Component{
   }
 
   componentDidMount = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      this.setState({ isUserSignedIn: !!user });
-      console.log("El usuario activo es:", user);
+    firebase.auth().onAuthStateChanged((user) => {//funcion watcher
+      this.setState({ isUserSignedIn: !!user });//convirtiendo user a valor booleano
+      console.log("El usuario activo es:"/*, user*/);
       if (user != null)console.log(firebase.auth().currentUser.displayName);
     })
   }
@@ -40,14 +40,7 @@ class LogIn extends React.Component{
             <div>
                 {this.state.isUserSignedIn ? (
                     <div className="currentUser">
-                        <button className="btnLogOut" onClick={() => firebase.auth().signOut()}>Sign out!</button>
-                        <br/><br/>
-                        <h1>Welcome {firebase.auth().currentUser.displayName}</h1>
-                        <img className="LogIn-photo"
-                            alt="profile_picture_not_found"
-                            src={firebase.auth().currentUser.photoURL}
-                        />
-                        <br/>
+                        <Dashboard/>                        
                         <Navigation/>
                     </div>  
                     ) : ( 
